@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+    <style>
+        .spoljni {
+            width: 100%;
+          display: flex;
+    
+    /*redoslijed*/
+          /*flex-direction: column-reverse; */
+          /*flex-direction: column;*/
+          flex-direction: row;
+          /*flex-direction: row-reverse;*/
+    
+    /*ponasanje unutrasnjih*/
+         /* flex-wrap: wrap;*/ /*u ovom slucaju izbacite width u procentima iz unutrasnjih elementa*/
+          flex-wrap: nowrap;
+          
+    /*justify*/
+          /*justify-content: center;
+        justify-content: flex-start;
+          justify-content: flex-end;
+          justify-content: space-around;*/
+          justify-content: space-between;
+    
+          background-color: lightblue;
+        }
+        
+        .slika{
+          width: 200px;
+          height: 150px;
+          border-radius: 25px;
+          display: block;
+          margin: auto;
+        }
+        
+        .velikaSlika{
+          position:absolute;
+          right: 10px;
+          bottom: 10px;
+          width: 300px;
+          height: 200px;
+          border-radius: 25px;
+        }
+
+        .dugme{
+          background-color: lightblue;
+          border-radius: 25px;
+          border: none;
+          margin:0 auto;
+          display:block;
+        }
+
+        .spoljni > .unutrasnji {
+          background-color: lightcyan;
+          width: 20%;
+          margin: 10px;
+          padding: 10px;
+        }
+    </style>
+</head>
+<body onload="prikazVozila()">
+  <button onclick="prikazVozila()">prikaz</button>
+    <div class="spoljni" id="spoljni"></div>
+    <br><hr><br>
+    <div>
+      <label>ID vozila:</label>
+      <input readonly="true" id="idVozila"> <br><br>
+      <label>Boja vozila:</label>
+      <input id="bojaVozila"> <br><br>
+      <label>Url slike vozila:</label>
+      <input id="urlVozila"><br><br>
+      <label>Datum registracije vozila:</label>
+      <input type="datetime" id="registracijaVozila"><br><br>
+      <label>Kategorija vozila:</label>
+      <input id="kategorijaVozila"><br><br>
+      <label>Kapacitet vozila:</label>
+      <input id="kapacitetVozila"><br><br>
+      <button onclick="finishUpdate()">Update</button>
+      <img id="slideshow" class="velikaSlika">
+    </div>
+</body>
+</html>
